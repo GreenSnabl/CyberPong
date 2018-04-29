@@ -105,7 +105,7 @@ void Ball::update(sf::RenderWindow& pWindow, sf::Time elapsed) {
     } // rechter Schläger
     else if (getGlobalBounds().left < p2p.x + (pPad2->getSize().x / 2) + 8 && 
              getGlobalBounds().left + getGlobalBounds().width >  p2p.x - (pPad2->getSize().x / 2) + 8 &&
-             getGlobalBounds().top + getGlobalBounds().height >= p2p.y - (pPad2->getSize().y / 2) - 8&&
+             getGlobalBounds().top + getGlobalBounds().height >= p2p.y - (pPad2->getSize().y / 2) + 8 &&
              getGlobalBounds().top <= p2p.y + pPad2->getSize().y/2 - 8)
     {
                 sClick.play();

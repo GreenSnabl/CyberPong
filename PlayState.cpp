@@ -34,10 +34,10 @@ PlayState::PlayState() : GameState() {
     txtPointsRight.setPosition(700.f, 10.f);
 
 
-    spPad1->setKeyUp(sf::Keyboard::Key::Up);
-    spPad1->setKeyDown(sf::Keyboard::Key::Down);
-    spPad2->setKeyUp(sf::Keyboard::Key::W);
-    spPad2->setKeyDown(sf::Keyboard::Key::S);
+    spPad1->setKeyUp(sf::Keyboard::Key::W);
+    spPad1->setKeyDown(sf::Keyboard::Key::S);
+    spPad2->setKeyUp(sf::Keyboard::Key::Up);
+    spPad2->setKeyDown(sf::Keyboard::Key::Down);
 
     pointsLeft = 0;
     pointsRight = 0;

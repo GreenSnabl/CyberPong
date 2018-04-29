@@ -35,7 +35,6 @@ Paddle::Paddle(sf::Vector2f rect, sf::Color col, sf::Vector2f pos, sf::String te
 
 void Paddle::update(sf::RenderWindow& pWindow, sf::Time elapsed) {
     
-    // Hier wird die Beschleunigung miteinbezogen
     tempElapsedTime += elapsed;
     
     if (tempElapsedTime.asSeconds() > .05)
