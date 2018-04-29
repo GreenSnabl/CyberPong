@@ -54,3 +54,8 @@ void Game::changeState(gameStates newState)
             break;
     }
 }
+
+std::string Game::numberToString(int num)
+{
+    return std::to_string(num);
+}

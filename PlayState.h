@@ -33,6 +33,13 @@ private:
     std::unique_ptr<Ball> upBall;
     std::shared_ptr<Paddle> spPad1;
     std::shared_ptr<Paddle> spPad2;
+    
+    sf::Font font;
+    sf::Text txtPointsLeft;
+    sf::Text txtPointsRight;
+    
+    int pointsLeft;
+    int pointsRight;
 };
 
 #endif /* PLAYSTATE_H */

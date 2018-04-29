@@ -16,6 +16,7 @@
 
 #include <memory>
 #include <iostream>
+#include <string>
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 #include "MainMenuState.h"
@@ -31,6 +32,8 @@ public:
     bool isRunning();
     
     void changeState(gameStates newState);
+    std::string numberToString(int num);
+    
     
     bool running;
     sf::RenderWindow window;

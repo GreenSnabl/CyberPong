@@ -18,10 +18,25 @@ PlayState::PlayState() {
     spPad2 = std::make_shared<Paddle>(sf::Vector2f(64.f, 192.f), sf::Color::Red, sf::Vector2f(1250.f, 310.f));
     upBall = std::unique_ptr<Ball>(new Ball(20.f, sf::Color::Yellow, sf::Vector2f(640.f, 310.f), spPad1, spPad2));
     
+    font.loadFromFile("./Font/UbuntuMono-B.ttf");
+    txtPointsLeft.setFont(font);
+    txtPointsLeft.setCharacterSize(50);
+    txtPointsLeft.setString("0");
+    txtPointsLeft.setPosition(500.f, 10.f);
+
+    txtPointsRight.setFont(font);
+    txtPointsRight.setCharacterSize(50);
+    txtPointsRight.setString("0");
+    txtPointsRight.setPosition(700.f, 10.f);
+    
+    
     spPad1->setKeyUp(sf::Keyboard::Key::Up);
     spPad1->setKeyDown(sf::Keyboard::Key::Down);
     spPad2->setKeyUp(sf::Keyboard::Key::W);
     spPad2->setKeyDown(sf::Keyboard::Key::S);
+    
+    pointsLeft = 0;
+    pointsRight = 0;
 }
 
 
@@ -52,6 +67,20 @@ void PlayState::update(Game& game) {
     upBall->update(game.window, game.frameDeltaTime);
     spPad1->update(game.window, game.frameDeltaTime);
     spPad2->update(game.window, game.frameDeltaTime);
+    
+    if (upBall->getPosition().x < 0) {
+        ++pointsRight;
+        upBall->init();
+        
+    } 
+    else if (upBall->getPosition().x > game.window.getSize().x)
+    {
+        ++pointsLeft;
+        upBall->init();
+    }
+    
+    txtPointsLeft.setString(game.numberToString(pointsLeft));
+    txtPointsRight.setString(game.numberToString(pointsRight));
 }
 
 void PlayState::draw(Game& game) {
@@ -59,6 +88,8 @@ void PlayState::draw(Game& game) {
     game.window.draw(*upBall);    
     game.window.draw(*spPad1);    
     game.window.draw(*spPad2);    
+    game.window.draw(txtPointsLeft);
+    game.window.draw(txtPointsRight);
 }
 
 PlayState::~PlayState()

@@ -31,7 +31,7 @@ Ball::Ball(float rad, sf::Color col, sf::Vector2f pos, std::shared_ptr<Paddle> p
 
 void Ball::init()
 {
-    speed = 400.f;
+    speed = 800.f;
     direction = rand() & 2;
     if (direction == 0) {
         movement = sf::Vector2f(speed, 0.f);
