@@ -18,13 +18,17 @@
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include "GameState.h"
 #include "MainMenuState.h"
 #include "PlayState.h"
 
+#include "Sound.h"
+
 class Game {
 public:
     Game();
+    ~Game();
 
     enum class gameStates {MAINMENU, PLAY};
     
@@ -43,8 +47,11 @@ public:
     sf::Time now;
     sf::Time frameDeltaTime;
 
+    Sound* getSound();
+    
 private:
     std::unique_ptr<GameState> currentState;
+    Sound* sound;
 
 };
 

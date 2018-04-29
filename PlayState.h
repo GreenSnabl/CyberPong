@@ -37,9 +37,16 @@ private:
     sf::Font font;
     sf::Text txtPointsLeft;
     sf::Text txtPointsRight;
+    sf::Texture tBackground;
+    sf::Sprite sBackground;
+    
     
     int pointsLeft;
     int pointsRight;
+    
+    sf::SoundBuffer bLose;
+    sf::Sound sLose;
+    
 };
 
 #endif /* PLAYSTATE_H */

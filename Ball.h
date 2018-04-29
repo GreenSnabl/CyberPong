@@ -16,6 +16,8 @@
 
 #include "Paddle.h"
 #include <memory>
+#include <SFML/Audio.hpp>
+
 
 class Ball : public sf::CircleShape {
 public:
@@ -28,8 +30,14 @@ private:
     float speed;
     sf::Vector2f movement;
     
+    sf::Texture texture;
+    
     std::shared_ptr<Paddle> pPad1;
     std::shared_ptr<Paddle> pPad2;
+    
+    sf::SoundBuffer bClick;
+    sf::Sound sClick;
+    
 };
 
 #endif /* BALL_H */

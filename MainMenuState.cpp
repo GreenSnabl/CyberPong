@@ -17,7 +17,7 @@
 
 MainMenuState::MainMenuState()
 {
-    font.loadFromFile("./Font/UbuntuMono-B.ttf");
+    font.loadFromFile("./assets/font/UbuntuMono-B.ttf");
     txtStartGame.setFont(font);
     txtStartGame.setString("Spiel starten");
     txtStartGame.setCharacterSize(30);

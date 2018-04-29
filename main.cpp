@@ -14,6 +14,7 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 
+#include <SFML/Audio.hpp>
 
 int main(int argc, char** argv) {
 
@@ -23,7 +24,7 @@ int main(int argc, char** argv) {
     while (cyberPong.isRunning()) {
         cyberPong.run();
     }
-    
+
     return 0;
 }
 

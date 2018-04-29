@@ -13,7 +13,7 @@
 
 #include "Game.h"
 
-Game::Game() : running{true} 
+Game::Game() : running{true} , sound{new Sound}
 {
     window.create(sf::VideoMode(1280,720), "CyberPong");
 }
@@ -59,3 +59,8 @@ std::string Game::numberToString(int num)
 {
     return std::to_string(num);
 }
+
+Game::~Game() {
+    delete sound;
+}
+

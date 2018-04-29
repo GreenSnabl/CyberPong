@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/MainMenuState.o \
 	${OBJECTDIR}/Paddle.o \
 	${OBJECTDIR}/PlayState.o \
+	${OBJECTDIR}/Sound.o \
 	${OBJECTDIR}/main.o
 
 
@@ -97,6 +98,11 @@ ${OBJECTDIR}/PlayState.o: PlayState.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayState.o PlayState.cpp
+
+${OBJECTDIR}/Sound.o: Sound.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sound.o Sound.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
